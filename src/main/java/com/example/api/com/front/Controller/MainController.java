@@ -26,6 +26,7 @@ public class MainController {
     private UsuarioService usuarioService;
 
     //LISTA TODOS OS USUARIOS
+    @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<List<Usuario>> listaUsuarios() {
         return ResponseEntity.status(200).body(usuarioService.listarUsuariosPorIdCrescente());
