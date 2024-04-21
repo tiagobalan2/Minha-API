@@ -32,7 +32,8 @@ public class MainController {
     }
 
     //CRIA UM USUARIO NOVO
-    @PostMapping
+    @CrossOrigin(origins = "*")
+    @PostMapping("/cadastro")
     public ResponseEntity<Usuario> criarUsuario(@Valid @RequestBody Usuario usuario) {
         return ResponseEntity.status(201).body(usuarioService.criarUsuario(usuario));
     }
